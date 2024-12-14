@@ -1,7 +1,8 @@
 /data/train
 /data/test
 /venv/
-/weights/
+/weights/noorkhokhar99/
+/weights/checkpoints/
 /temp/
 /utils/__pycache__/
 installation_logs.txt
