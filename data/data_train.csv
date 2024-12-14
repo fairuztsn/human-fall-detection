@@ -3201,7 +3201,7 @@ path,label,conf
 .\data\train\subject-3\non_fall\3_squat\frame089.jpg,0,0.0
 .\data\train\subject-3\non_fall\3_squat\frame090.jpg,0,0.3817206025123596
 .\data\train\subject-3\non_fall\3_squat\frame091.jpg,0,0.2752957642078399
-.\data\train\subject-3\non_fall\3_squat\frame092.jpg,2,0.0
+.\data\train\subject-3\non_fall\3_squat\frame092.jpg,0,0.0
 .\data\train\subject-3\non_fall\3_squat\frame093.jpg,0,0.3425038456916809
 .\data\train\subject-3\non_fall\3_squat\frame094.jpg,0,0.0
 .\data\train\subject-3\non_fall\3_squat\frame095.jpg,0,0.0
@@ -3310,7 +3310,7 @@ path,label,conf
 .\data\train\subject-3\non_fall\3_stretching\frame080.jpg,0,0.0
 .\data\train\subject-3\non_fall\3_stretching\frame081.jpg,0,0.0
 .\data\train\subject-3\non_fall\3_stretching\frame082.jpg,0,0.0
-.\data\train\subject-3\non_fall\3_stretching\frame083.jpg,2,0.0
+.\data\train\subject-3\non_fall\3_stretching\frame083.jpg,0,0.0
 .\data\train\subject-3\non_fall\3_stretching\frame084.jpg,0,0.0
 .\data\train\subject-3\non_fall\3_stretching\frame085.jpg,0,0.0
 .\data\train\subject-3\non_fall\3_stretching\frame086.jpg,0,0.0
@@ -3527,7 +3527,7 @@ path,label,conf
 .\data\train\subject-4\non_fall\4_jumping\frame047.jpg,0,0.0
 .\data\train\subject-4\non_fall\4_jumping\frame048.jpg,0,0.0
 .\data\train\subject-4\non_fall\4_jumping\frame049.jpg,0,0.0
-.\data\train\subject-4\non_fall\4_jumping\frame050.jpg,2,0.0
+.\data\train\subject-4\non_fall\4_jumping\frame050.jpg,0,0.0
 .\data\train\subject-4\non_fall\4_jumping\frame051.jpg,0,0.0
 .\data\train\subject-4\non_fall\4_jumping\frame052.jpg,0,0.0
 .\data\train\subject-4\non_fall\4_jumping\frame053.jpg,0,0.0
