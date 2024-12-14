@@ -2,4 +2,6 @@
 /data/test
 /venv/
 /weights/
+/temp/
+/utils/__pycache__/
 installation_logs.txt
