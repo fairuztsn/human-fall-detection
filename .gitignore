@@ -5,4 +5,6 @@
 /weights/checkpoints/
 /temp/
 /utils/__pycache__/
+
+/notebooks/temp.ipynb
 installation_logs.txt
