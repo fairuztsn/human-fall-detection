@@ -1,0 +1,58 @@
+import torch
+import torch.nn as nn
+import torch.optim as optim
+import numpy as np
+
+# Misalnya, kita sudah memiliki keypoints_vector yang sudah dinormalisasi
+# Ukuran input: Misalnya 33 keypoints, masing-masing memiliki x, y, z (untuk 3D) atau x, y (untuk 2D)
+input_size = 99  # 33 keypoints * 3 untuk 3D pose atau 33 * 2 untuk 2D pose
+hidden_size = 128  # Ukuran layer tersembunyi
+
+class FallDetectionModel(nn.Module):
+    def __init__(self, input_size, hidden_size=128):
+        super(FallDetectionModel, self).__init__()
+        # Layer fully connected (FC)
+        self.fc1 = nn.Linear(input_size, hidden_size)
+        self.fc2 = nn.Linear(hidden_size, 64)
+        self.fc3 = nn.Linear(64, 1)  # Output 1 untuk binary classification
+        self.sigmoid = nn.Sigmoid()  # Sigmoid untuk probabilitas biner
+
+    def forward(self, x):
+        x = torch.relu(self.fc1(x))  # Aktivasi ReLU
+        x = torch.relu(self.fc2(x))  # Aktivasi ReLU
+        x = self.fc3(x)
+        x = self.sigmoid(x)  # Probabilitas fall/non-fall
+        return x
+
+# Misalkan keypoints_vector adalah vektor dengan ukuran (num_keypoints * 3) untuk 3D pose
+# Input ke model adalah vektor keypoints
+keypoints_vector = torch.randn((1, input_size))  # Vektor input (misalnya keypoints dari satu gambar)
+
+# Inisialisasi model
+model = FallDetectionModel(input_size=input_size)
+
+# Loss function dan optimizer
+criterion = nn.BCELoss()  # Binary Cross-Entropy Loss untuk binary classification
+optimizer = optim.Adam(model.parameters(), lr=0.001)
+
+# Misalnya, kita memiliki label untuk data: 1 berarti fall, 0 berarti non-fall
+label = torch.tensor([1.0])  # Label: 1 untuk fall, 0 untuk non-fall
+
+# Training loop sederhana
+model.train()
+for epoch in range(100):
+    optimizer.zero_grad()
+    output = model(keypoints_vector)  # Forward pass
+    loss = criterion(output.squeeze(), label)  # Hitung loss
+    loss.backward()  # Backpropagation
+    optimizer.step()  # Update parameter model
+    
+    if epoch % 10 == 0:
+        print(f"Epoch {epoch}, Loss: {loss.item()}")
+
+# Setelah model dilatih, lakukan prediksi
+model.eval()
+with torch.no_grad():
+    output = model(keypoints_vector)  # Inferensi
+    predicted_label = (output > 0.5).float()  # Threshold untuk binary classification
+    print(f"Predicted label: {'Fall' if predicted_label.item() == 1 else 'Non-Fall'}")
