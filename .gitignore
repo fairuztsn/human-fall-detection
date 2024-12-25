@@ -5,7 +5,7 @@
 /weights/checkpoints/
 /temp/
 /utils/__pycache__/
-
+/yolo_dataset/*
 /notebooks/temp.ipynb
 installation_logs.txt
 /__pycache__/
